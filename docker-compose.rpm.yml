@@ -1,7 +1,9 @@
 version: "3.8"
 
 services:
-  rpm-builder:
-    build: .
-    volumes:
-      - ./rpm-output:/output
+ rpm-builder:
+ build:
+ context: ./same-gnome
+ dockerfile: Dockerfile
+ volumes:
+ - ./rpm-output:/output
