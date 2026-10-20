@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY legal SYSTEM "legal.xml">
+<!ENTITY NETWORKGAMES SYSTEM "network-games.xml">
+<!ENTITY appversion "2.12">
+<!ENTITY manrevision "2.8">
+<!ENTITY date "September 2004">
+<!ENTITY app "<application>Four-in-a-Row</application>">
+<!ENTITY appname "Four-in-a-Row">
+<!ENTITY version "2.8">
+]>
+<!-- ===== DOCUMENT HEADER ===== -->
+<article id="index" lang="ca">
+<!-- please do not change the id -->
+<!-- translators, change lang to the appropriate code -->
+  <articleinfo>
+    <title>Four-in-a-Row Manual</title>
+    <abstract role="description">
+      <para>
+	The object of Four-in-a-Row is to place four pieces in a vertical, 
+	horizontal, or diagonal row while the opponent tries to block and
+	make his/her own row of four. Four-in-a-Row can be played against 
+	another human or the computer.
+      </para>
+    </abstract>
+
+    <copyright>
+      <year>2001-2002</year>
+      <holder>Timothy Musson</holder>
+    </copyright><copyright><year>2007</year><holder>Joan Duran (jodufi@gmail.com)</holder></copyright>
+
+    <!-- translators: uncomment this:
+
+    <copyright>
+     <year>2000</year>
+     <holder>ME-THE-TRANSLATOR (Latin translation)</holder>
+    </copyright>
+
+    -->
+
+    <publisher role="maintainer"> 
+      <publishername>Projecte de documentació del GNOME</publishername> 
+    </publisher> 
+
+      <legalnotice id="legalnotice">
+	<para>Teniu permís per a copiar, distribuir i/o modificar aquest document, sota els termes de la Llicència de documentació lliure GNU (GFDL), versió 1.1 o qualsevol versió publicada posteriorment per la Free Software Foundation, sense seccions invariants, sense texts de portada i sense texts de contraportada. Podeu trobar una còpia de la GFDL en aquest <ulink type="help" url="ghelp:fdl">enllaç</ulink> o en el fitxer COPYING-DOCS distribuït amb aquest manual.</para>
+         <para>Aquest manual forma part d'una col·lecció de manuals del GNOME distribuïts sota la GFDL. Si voleu distribuir aquest manual independentment de la col·lecció, podeu fer-ho afegint una còpia de la llicència al manual, tal com es descriu a la secció 6 de la llicència.</para>
+
+	<para>Molts dels noms que les empreses utilitzen per a distingir els seus productes i serveis es consideren marques comercials. Quan aquests noms apareguin en qualsevol documentació del GNOME, si els membres del Projecte de documentació del GNOME han estat avisats pel que fa a les marques, els noms apareixeran en majúscules o amb les inicials en majúscules.</para>
+
+	<para>EL DOCUMENT I LES VERSIONS MODIFICADES DEL DOCUMENT S'OFEREIXEN SOTA ELS TERMES DE LA LLICÈNCIA DE DOCUMENTACIÓ LLIURE DE GNU, TENINT EN COMPTE QUE: <orderedlist>
+		<listitem>
+		  <para>EL DOCUMENT S'OFEREIX «TAL COM ÉS», SENSE CAP TIPUS DE GARANTIA, NI EXPLÍCITA NI IMPLÍCITA; AIXÒ INCLOU, SENSE LIMITAR-S'HI, LES GARANTIES QUE EL DOCUMENT O LA VERSIÓ MODIFICADA DEL DOCUMENT NO TINGUI DEFECTES, SIGUI COMERCIALITZABLE, SIGUI ADEQUAT PER A UN ÚS CONCRET O NO INFRINGEIXI CAP LLEI. TOT EL RISC PEL QUE FA A LA QUALITAT, EXACTITUD I RENDIMENT DEL DOCUMENT O LA VERSIÓ MODIFICADA DEL DOCUMENT ÉS VOSTRE. EN CAS QUE EL DOCUMENT RESULTÉS DEFECTUÓS EN QUALSEVOL ASPECTE, VÓS (NO PAS L'ESCRIPTOR INICIAL, L'AUTOR O CAP ALTRE COL·LABORADOR) ASSUMIU TOT EL COST DE MANTENIMENT, REPARACIÓ O CORRECCIÓ. AQUESTA RENÚNCIA DE GARANTIA CONSTITUEIX UNA PART ESSENCIAL D'AQUESTA LLICÈNCIA. NO S'AUTORITZA L'ÚS DE CAP DOCUMENT O VERSIÓ MODIFICADA DEL DOCUMENT EXCEPTE SOTA AQUESTA RENÚNCIA DE GARANTIA; I </para>
+		</listitem>
+		<listitem>
+		  <para>EN CAP CAS I SOTA CAP INTERPRETACIÓ LEGAL, JA SIGUI PER AGREUJAMENT (INCLOENT-HI LA NEGLIGÈNCIA), CONTRACTE O ALTRE CAS, L'AUTOR, L'ESCRIPTOR ORIGINAL, QUALSEVOL DELS COL·LABORADORS O DISTRIBUÏDORS DEL DOCUMENT O UNA VERSIÓ MODIFICADA DEL DOCUMENT NI CAP PROVEÏDOR D'AQUESTES PARTS NO SERAN RESPONSABLES DAVANT DE NINGÚ PER CAP DANY DIRECTE, INDIRECTE, ESPECIAL, ACCIDENTAL O CONSECUTIU DE QUALSEVOL TIPUS; AIXÒ INCLOU, SENSE LIMITAR-S'HI, ELS DANYS PER PÈRDUA DE CLIENTS, INTERRUPCIONS DE LA FEINA, FALLADA O MALFUNCIONAMENT DE L'ORDINADOR, O QUALSEVOL ALTRA PÈRDUA O DANY RELACIONAT AMB L'ÚS DEL DOCUMENT I LES VERSIONS MODIFICADES DEL DOCUMENT, FINS I TOT SI S'HA INFORMAT AQUESTA PART DE LA POSSIBILITAT D'AQUESTS DANYS.</para>
+		</listitem>
+	  </orderedlist></para>
+  </legalnotice>
+
+
+
+    <authorgroup>
+      <author>
+        <firstname>Timothy</firstname>
+        <surname>Musson</surname>
+        <affiliation>
+          <!-- <orgname></orgname> -->
+          <address><email>trmusson@ihug.co.nz</email></address>
+        </affiliation>
+      </author>
+
+<!-- This is appropriate place for other contributors: translators,
+      maintainers,  etc. Commented out by default.
+
+      <othercredit role="translator">
+        <firstname>Latin</firstname> 
+        <surname>Translator 1</surname> 
+        <affiliation> 
+          <orgname>Latin Translation Team</orgname> 
+          <address> <email>translator@gnome.org</email> </address> 
+        </affiliation>
+        <contrib>Latin translation</contrib>
+      </othercredit>
+-->
+    </authorgroup>
+
+    <revhistory>
+      <revision>
+        <revnumber>Four-in-a-Row Manual V2.8</revnumber>
+        <date>Setembre de 2004</date>
+        <revdescription>
+          <para role="author">Timothy Musson <email>trmusson@ihug.co.nz</email></para>
+          <para role="publisher"/>
+        </revdescription>
+      </revision>
+    </revhistory>
+
+    <releaseinfo>This manual describes version 2.12 of Four-in-a-Row.
+    </releaseinfo>
+
+    <legalnotice>
+      <title>Comentaris</title>
+      <para>To report a bug or make a suggestion regarding the Four-in-a-Row
+        application or this manual, follow the directions in the
+        <ulink url="ghelp:gnome-feedback" type="help">GNOME Feedback Page</ulink>.
+      </para>
+    </legalnotice>
+  </articleinfo>
+
+
+  <!-- ============= Document Body ============================= -->
+
+  <!-- ============= Introduction ============================== -->
+
+
+  <sect1 id="intro">
+
+    <title>Introducció</title>
+
+    <para>
+      <application>Four-in-a-Row</application> is a four-in-a-row game for the GNOME Project.
+      The object of the game is to build a line of four of your marbles
+      while trying to stop your opponent (human or computer) building a
+      line of his or her own. A line can be horizontal, vertical or
+      diagonal.
+    </para>
+
+    <para>
+      To run <application>Four-in-a-Row</application>, select
+      <guimenuitem>Four-in-a-Row</guimenuitem> from the
+      <guisubmenu>Games</guisubmenu> submenu of the
+      <guimenu>Main Menu</guimenu>, or type
+      <command>gnect</command> on the command line.
+    </para>
+
+    <para>
+      <application>Four-in-a-Row</application> is included in the <filename>GNOME-games</filename> package,
+      which is part of the GNOME desktop environment. This document describes
+      version 2.8 of <application>Four-in-a-Row</application>.
+    </para>
+
+   <para>
+     Four-in-a-Row also features <link linkend="network-games">multiplayer</link> support with two 
+     human players in hotseat or network mode.
+   </para>
+
+
+  </sect1>
+
+
+  <!-- ============= Usage ===================================== -->
+
+
+  <sect1 id="usage">
+
+    <title>Utilització bàsica</title>
+
+    <!-- ===== How to play ===== -->
+
+    <sect2 id="playing">
+
+      <title>Playing Four-in-a-Row</title>
+
+      <para>
+        To start a new game of Four-in-a-Row choose <menuchoice><guimenu>Game</guimenu><guimenuitem>New Game</guimenuitem></menuchoice>.
+      </para>
+
+      <para>El <interface>tauler de joc</interface> consisteix en set columnes i sis files. A sobre d'aquestes, una fila especial indica quin és el jugador actual i la bola que s'està jugant. Cada moviment consisteix en deixar caure una bola en una de les columnes. La bola aterra a la fila buida més alta de la columna seleccionada.</para>
+        
+      <para>Per a fer un moviment, feu clic en la columna amb el ratolí. Per a jugar amb el teclat, mogueu la bola de la fila superior amb les tecles de cursor esquerra i dreta, i deixeu-la en el seu lloc amb la tecla de cursor avall. La bola caurà a la fila buida més alta d'aquesta columna.</para>
+
+      <!-- Figure -->
+      <mediaobject id="mainwindow-fig">
+        <imageobject>
+          <imagedata fileref="figures/mainwindow.png" format="PNG" srccredit="trm"/>
+        </imageobject>
+        <textobject>
+          <phrase>Four-in-a-Row's Main Window</phrase>
+        </textobject>
+        <caption><para>Four-in-a-Row's Main Window</para></caption>
+      </mediaobject>
+
+      <para>Es guanya la partida quan un dels dos jugadors aconsegueix alinear quatre de les seves boles horitzontalment, verticalment o diagonalment. Si el tauler s'omple sense un guanyador, la partida s'acaba amb empat.</para>
+
+    </sect2>
+    
+    <!-- ===== Commands ===== -->  
+    
+    <sect2 id="commands">
+      <title>Ordres</title>
+      <anchor id="menubar"/><!-- id for removed section -->
+      
+      <para>Per a desfer un moviment, seleccioneu <menuchoice><shortcut><keycombo><keysym>Ctrl</keysym><keycap>Z</keycap></keycombo></shortcut><guimenuitem>Desfés el moviment</guimenuitem></menuchoice>. Si esteu jugant contra un amic, això desfarà un moviment. Si esteu jugant contra l'ordinador, això desfarà l'últim moviment de l'ordinador i després el vostre. Repetir-ho farà que el tauler torni a l'estat inicial.</para>
+      <para>Seleccioneu <menuchoice><shortcut><keycombo><keysym>Ctrl</keysym><keycap>H</keycap></keycombo></shortcut><guimenuitem>Pista</guimenuitem></menuchoice> per a obtenir una suggeriment de l'ordinador per al moviment següent. Aquesta es mostra a la barra d'estat.</para>
+      
+      <para>Seleccioneu <menuchoice><guimenuitem>Puntuacions</guimenuitem></menuchoice> per a mostrar el número de victòries i empats de la sessió actual. La puntuació es posarà a zero si es modifica la secció de jugadors en les preferències.</para>      
+
+      
+    </sect2>  
+
+    <!-- ===== Preferences ===== -->
+
+    <sect2 id="prefsdialog">
+
+      <title>Preferències</title>
+
+      <para>Per a canviar els paràmetres del joc, seleccioneu <guimenuitem>Preferències</guimenuitem> en el menú <guimenu>Paràmetres</guimenu>. Això obre el <interface>diàleg de preferències</interface>.</para>
+
+      <para>Les opcions de configuració en la pestanya <guilabel>Partida</guilabel> són: <variablelist>
+
+          <varlistentry>
+            <term><guilabel>Jugador un</guilabel> i <guilabel>Jugador dos</guilabel></term>
+            <listitem>
+              <para>
+
+                These two columns tell <application>Four-in-a-Row</application> who's playing and, if it is the computer, how hard they play. To play against a friend, select
+                Human for both Player One and Player Two.
+
+              </para>
+            </listitem>
+          </varlistentry>
+
+          <varlistentry>
+            <term><guilabel>Tema</guilabel></term>
+            <listitem>
+              <para>El menú de tema llista els temes disponibles i us permet seleccionar el preferit.</para>
+            </listitem>
+          </varlistentry>
+
+          <varlistentry>
+            <term><guilabel>Habilita les animacions</guilabel></term>
+            <listitem>
+              <para>Aquí podeu commutar l'animació del joc entre habilitada i inhabilitada.</para>
+            </listitem>
+          </varlistentry>
+
+        </variablelist></para>
+      <para>Finalment hi ha la pestanya de <guilabel>Controls</guilabel> per a canviar els controls del teclat. Per a canviar un control, feu doble clic en l'entrada apropiada i premeu la tecla nova.</para>
+
+    </sect2>
+  </sect1>
+
+
+  <!-- ===== Custom Themes ===================================== -->
+
+
+  <sect1 id="custom">
+
+    <title>Crear temes nous</title>
+
+    <para>
+      This section's included in case you'd like to make your own themes for
+      <application>Four-in-a-Row</application>. It assumes you're familiar with basic text editing, graphics
+      software and the command line.
+    </para>
+
+    <sect2 id="images">
+
+      <title>Imatges</title>
+
+      <para>
+        <application>Four-in-a-Row</application>'s tile sets contain six tiles of equal size, lined up
+        horizontally. From left to right:
+      </para>
+
+      <orderedlist>
+        <listitem>
+          <para>Bola del jugador un com apareix en el tauler de joc</para>
+        </listitem>
+        <listitem>
+          <para>Bola del jugador dos com apareix en el tauler de joc</para>
+        </listitem>
+        <listitem>
+          <para>Fons del tauler de joc</para>
+        </listitem>
+        <listitem>
+          <para>Fons de la fila superior</para>
+        </listitem>
+        <listitem>
+          <para>Bola del jugador un com apareix en la fila superior</para>
+        </listitem>
+        <listitem>
+          <para>Bola del jugador dos com apareix en la fila superior</para>
+        </listitem>
+      </orderedlist>
+
+      <figure id="shot1">
+        <title>Exemple d'un joc de fitxes</title>
+        <screenshot>
+          <screeninfo>Aquesta imatge mostra les sis fitxes d'un joc de fitxes</screeninfo>
+          <graphic format="PNG" fileref="figures/tileset.png" srccredit="TRM"/>
+        </screenshot>
+      </figure>
+
+      <para>Les fitxes tres i quatre es repetiran per tot el tauler de joc i la fila superior a no ser que s'especifiqui una imatge de fons de pantalla completa en el fitxer de temes.</para>
+
+      <tip>
+        <title>Consell</title>
+        <para>Es recomana el format PNG per als jocs de fitxes. La primera, segona, cinquena i sisena fitxes haurien de contenir alguna transparència si voleu que el fons es vegi a través d'elles. La tercera i quarta fitxa haurien de ser sòlides, sense transparències, encara que utilitzeu una imatge de fons de pantalla completa amb el tema.</para>
+      </tip>
+
+      <tip>
+        <title>Consell</title>
+        <para>
+          Tiles can be square or rectangular, and any size you like. Most
+          of the tile sets that come with <application>Four-in-a-Row</application> use square tiles measuring
+          50 pixels by 50 pixels.
+        </para>
+      </tip>
+
+      <para>Per a utilitzar una imatge de fons de pantalla completa, hi ha més feina a fer. Diguem que les fitxes mesuren 50 per 50 píxels. Les dimensions del joc són 7 per 7 fitxes, incloent la fila superior, de manera que la imatge de fons per al joc de fitxes mesuraria 350 per 350 píxels.</para>
+
+      <tip>
+        <title>Consell</title>
+        <para>
+          <application>Four-in-a-Row</application> will automatically scale the background image if it doesn't
+          match the tile set. This means you can make "large" and "small"
+          versions of your theme, both using the same background image,
+          just by having a large and a small version of your tile set.
+        </para>
+      </tip>
+
+      <para>Per tant, ara teniu un joc de fitxes i potser una imatge de fons que va amb el joc. El pas següent és posar-ho en la ubicació correcta.</para>
+
+    </sect2>
+
+
+    <sect2 id="directories">
+
+      <title>Ajuntar-ho tot</title>
+
+      <para>
+        The last step is to put your image(s) where <application>Four-in-a-Row</application> can
+        find them. You could put them in Four-in-a-row's install directory (which will
+        depend on your particular system), but your home directory's probably
+        a better idea.
+      </para>
+
+      <para>
+        Make a <filename class="directory">~/.gnect</filename> directory,
+        and a <filename class="directory">~/.gnect/pixmaps</filename>
+        directory. Those names are important, as <application>Four-in-a-Row</application> won't look
+        anywhere else.
+      </para>
+
+      <para>Copieu les imatges en el directori pixmaps.</para>
+
+      <para>
+        If you start <application>Four-in-a-Row</application> from the command line, it'll give you clues about
+        any problems it has with your new theme. If it has none, you'll
+        find your new theme listed the
+        <interface>Preferences Dialog</interface>.
+      </para>
+
+      <para>A divertir-se!</para>
+
+    </sect2>
+
+
+  </sect1>
+
+
+<!-- ============= Network games  ===============================================
+ This doc is common to gnome-games. The file is pulled in from gnibbles directory
+ as a SVN symlink, and included here. Therefore translators only have to translate 
+ the network stuff once, instead of one time for each game. 
+ ================================ -->
+
+  <!-- ============= Network Games Documentation ============================= 
+   This documentation is written so that is can be reused for all the 
+   gnome-games which have network multiplayer support. Therefore no direct
+   references to a specific game should be made. Further, this file is currently
+   included in the various games as a SVN symlink. The figures can also
+   be included as SVN symlinks to avoid duplication of the same images.
+  -->
+
+ <sect1 id="network-games">
+  <title>Jocs en xarxa</title>
+  <para>
+    Four-in-a-Row support networked multiplayer games which is provided by <ulink type="http" url="http://www.ggzgamingzone.org">GGZ Gaming Zone</ulink>. By connecting to a Four-in-a-Row server
+    on the Internet, you can challenge other players in multiplayer games.
+    For news, updates and a list of servers to connect to, see the <ulink type="http" url="http://www.gnome.org/projects/gnome-games/">gnome-games website</ulink>.
+  </para>
+  <para>
+    To start the multiplayer game of Four-in-a-Row, select <menuchoice><guimenu>Game</guimenu> 
+    <guimenuitem>Network Game</guimenuitem></menuchoice> on the Four-in-a-Row menu.
+  </para> 
+
+<sect2 id="connecting">
+<title>Connecting to a Four-in-a-Row network server</title>
+<para>
+The Four-in-a-Row connection dialog is shown initially when starting a new
+network game. This dialog allows you to select a server to connect to,
+and the username that you will have while connected to that server.  
+</para>
+
+<para>És possible connectar-vos a un servidor amb un compte de convidat o un compte registrat normal. Els comptes de convidats us permeten entrar anònimament, mentre que si entreu amb un compte normal us permet reservar el nom d'usuari que està protegit per la contrasenya que seleccioneu.</para>
+
+<para>Hauríeu de seleccionar l'opció <guimenuitem>Entrada com a convidat</guimenuitem> si voleu un compte de convidat anònim. Si voleu crear un compte d'entrada nou, seleccioneu l'opció <guimenuitem>Entrada per primera vegada</guimenuitem>, amb el nom d'usuari, contrasenya i correu electrònic que vulgueu. Si ja heu creat un compte, us podeu connectar si seleccioneu l'opció <guimenuitem>Entrada normal</guimenuitem> i introduïu el nom d'usuari i la contrasenya que heu triat.</para>
+<para>Per a connectar-vos a un servidor, feu clic en el botó <guimenuitem>Connecta</guimenuitem>.</para>
+<figure id="connect">
+<title>The Four-in-a-Row network connection dialog.</title>
+<screenshot>
+  <mediaobject> 
+    <imageobject>
+  <imagedata fileref="figures/connect.png" format="PNG" srccredit="Andreas Røsdal"/>
+    </imageobject>
+    <textobject> 
+      <phrase>The Four-in-a-Row network connection dialog.</phrase> 
+    </textobject> 
+  </mediaobject>
+</screenshot>
+</figure>
+</sect2>
+
+<sect2 id="joining">
+<title>Entrada a una sala de joc</title>
+<para>
+Once you have successfully connected to a server, you can choose which game room to join. To play a multiplayer game of Four-in-a-Row, select the Four-in-a-Row room. If you want to host your own game, then click on the Launch button. This creates a new table where other players can participate in a game against you. 
+If there are any other games already started, then you can double-click on an existing game table to join it.
+The list of game tables on the right shows you the number of available seats, which means the
+number of players that can join the game table.
+</para>
+<figure id="tables">
+<title>This Four-in-a-Row network dialog allows you to join a game room to find other players.</title>
+<screenshot>
+  <mediaobject> 
+    <imageobject>
+  <imagedata fileref="figures/tables.png" format="PNG" srccredit="Andreas Røsdal"/>
+    </imageobject>
+    <textobject> 
+      <phrase>This Four-in-a-Row network dialog allows you to join a game room to find other players.</phrase> 
+    </textobject> 
+  </mediaobject>
+</screenshot>
+</figure>
+<para>
+When creating a new table for Four-in-a-Row games, a preference dialog is displayed which allows you to
+customize the game, such as set the minimum number of players for the game. Once the total
+number of seats have been taken, then no more players are allowed to join that game table.
+</para>
+<para>És possible fer un xat amb altres jugadors en els jocs en xarxa. Demaneu consell o ajuda mentre jugueu les partides, però sigueu educat amb els altres jugadors.</para>
+</sect2>
+
+<sect2 id="pregame">
+<title>Espera que els altres jugadors entrin a la partida</title>
+<para>Quan hàgiu entrat a un tauler de joc, heu d'esperar fins que hagin entrat suficients jugadors al tauler. L'element de menú <guimenuitem>Llista de jugadors</guimenuitem> us permet veure una llista de jugadors que han entrat a la partida. La partida començarà de seguida que s'hagi aconseguit el número total de jugadors.</para>
+</sect2>
+
+<sect2 id="playing-multiplayer">
+<title>Playing multiplayer Four-in-a-Row games</title>
+<para>
+Multiplayer Four-in-a-Row games have pretty much the same rules as normal Four-in-a-Row games,
+except that you are now playing against human players. This means that other
+strategies might possibly be better than when playing against AI players.
+</para>
+<para>
+Once a player has won, the game ends and you can return to the initial network game screen.
+Then you can play yet another game of addictive Four-in-a-Row multiplayer!
+</para>
+</sect2>
+
+</sect1>
+
+
+
+  <!-- ===== Bugs ============================================== -->
+
+
+  <sect1 id="bugs">
+
+    <title>Errors i limitacions conegudes</title>
+
+    <para>A vegades l'animació de caiguda de les boles no sembla tant suau com hauria de ser.</para>
+
+  </sect1>
+
+
+  <!-- ===== Authors =========================================== -->
+
+
+  <sect1 id="authors">
+
+    <title>Autors</title>
+
+    <para>
+      <application>Four-in-a-Row</application> was written by Timothy Musson (<email>trmusson@ihug.co.nz</email>)
+      and David Neary (<email>bolsh@gimp.org</email>). Various others
+      have taken the time to help in many ways since work on <application>Four-in-a-Row</application> began.
+    </para>
+    <para>
+      The <ulink type="http" url="http://www.ce.unipr.it/~gbe/velena.html">Velena Engine</ulink>,
+      <application>Four-in-a-Row</application>'s main computer player, was written by Giuliano Bertoletti.
+      We're grateful to him for allowing us to include his work, without
+      which <application>Four-in-a-Row</application> wouldn't be nearly as worthwhile.
+    </para>
+    <para>En Timothy Musson ha escrit aquest manual.</para>
+    <para>Per a informar d'un error o fer algun suggeriment quant a aquest aplicació o aquest manual, seguiu les indicacions a la <ulink url="ghelp:gnome-feedback" type="help">pàgina de comentaris del GNOME</ulink>.</para>
+
+
+<!-- For translations: uncomment this:
+
+  <para>
+    Latin translation was done by ME
+    (<email>MYNAME@MYADDRESS</email>). Please send all comments and
+    suggestions regarding this translation to SOMEWHERE.
+  </para>
+
+-->
+
+  </sect1>
+
+
+  <!-- ============= License =================================== -->
+
+
+  <sect1 id="license">
+
+    <title>Llicència</title>
+
+    <para>Aquest programa és programari lliure; podeu redistribuir-lo i/o modificar-lo sota els termes de la <citetitle>Llicència pública general de GNU</citetitle> tal com publica la Free Software Foundation; tant en la versió 2 de la llicència, o (a la vostra opció) una versió posterior.</para>
+
+    <para>Aquest programa es distribueix amb l'esperança de que sigui útil, però SENSE CAP GARANTIA; fins i tot sense la garantia implícita de COMERCIALITZACIÓ o ADEQUACIÓ A UN ÚS CONCRET. Per a més detalls vegeu la <citetitle>Llicència pública general de GNU</citetitle>.</para>
+
+    <para>S'inclou una còpia de la <citetitle>Llicència pública general de GNU</citetitle> en l'apèndix de la <citetitle>Guia d'usuaris del GNOME</citetitle>. També podeu obtenir una copia de la <citetitle>Llicència pública general de GNU</citetitle> de la Free Software Foundation visitant el <ulink type="http" url="http://www.fsf.org">seu lloc web</ulink> o escrivint a <address> Free Software Foundation, Inc. <street>59 Temple Place</street> - Suite 330 <city>Boston</city>, <state>MA</state><postcode>02111-1307</postcode><country>USA</country></address></para>
+
+  </sect1>
+
+</article>
