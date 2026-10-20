@@ -1,0 +1,13 @@
+builddir/
+*.o
+*.a
+*.so
+Makefile
+config.h
+config.status
+libtool
+.deps/
+.DS_Store
+gnome-games-2.22.0/
+node_modules/
+dist/
