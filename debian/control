@@ -1,0 +1,18 @@
+Source: same-gnome
+Section: games
+Priority: optional
+Maintainer: djackson <djackson@sonic.danieljackson.systems>
+Build-Depends: debhelper-compat (= 13), meson, ninja-build, libgtk-4-dev, pkg-config
+Rules-Requires-Root: no
+Standards-Version: 4.6.2
+
+Package: same-gnome
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Modern GTK4 port of the classic GNOME Same puzzle game
+ A modern GTK4 port of the classic GNOME "Same" puzzle game, featuring
+ 3D ball rotation, dynamic screen scaling, and configurable board sizes
+ up to 256x256.
+ .
+ Click on groups of 2 or more adjacent same-colored balls to remove them.
+ The goal is to clear the entire board. Larger groups yield higher scores.
