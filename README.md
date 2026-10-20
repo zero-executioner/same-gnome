@@ -1,5 +1,7 @@
 # Same GNOME
 
+![Same GNOME Screenshot](same-gnome.jpg)
+
 A modern GTK4 port of the classic GNOME "Same" puzzle game, featuring 3D ball rotation, dynamic screen scaling, and configurable board sizes up to 256×256.
 
 ## Features
