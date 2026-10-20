@@ -1,3 +1,0 @@
-shlibs:Depends=libc6 (>= 2.38), libcairo2 (>= 1.2.4), libglib2.0-0t64 (>= 2.32.0), libgtk-4-1 (>= 4.0.0)
-misc:Depends=
-misc:Pre-Depends=

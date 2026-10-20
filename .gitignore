@@ -11,3 +11,6 @@ libtool
 gnome-games-2.22.0/
 node_modules/
 dist/
+# Build artifacts
+debian/
+rpm-output/
