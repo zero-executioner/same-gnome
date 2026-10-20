@@ -2,8 +2,6 @@ version: "3.8"
 
 services:
   rpm-builder:
-    build:
-      context: .
-      dockerfile: Dockerfile.rpm
+    build: .
     volumes:
       - ./rpm-output:/output
