@@ -1,0 +1,12 @@
+Package: same-gnome-dbgsym
+Source: same-gnome
+Version: 1.0.0-1
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: djackson <djackson@sonic.danieljackson.systems>
+Installed-Size: 49
+Depends: same-gnome (= 1.0.0-1)
+Section: debug
+Priority: optional
+Description: debug symbols for same-gnome
+Build-Ids: 0543ec2ed60727387495d8a75c9467f4f3943b1d
