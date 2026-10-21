@@ -1,6 +1,8 @@
 FROM almalinux:9
 
-RUN dnf install -y epel-release && \
+RUN dnf makecache && \
+    dnf install -y epel-release && \
+    dnf makecache && \
     dnf install -y meson ninja-build gtk4-devel pkgconf-pkg-config gcc make rpm-build tar git && \
     dnf clean all
 
