@@ -1,7 +1,7 @@
 FROM almalinux:9
 
-RUN dnf makecache && \
-    dnf install -y epel-release && \
+RUN dnf install -y epel-release && \
+    dnf config-manager --set-enabled crb && \
     dnf makecache && \
     dnf install -y meson ninja-build gtk4-devel pkgconf-pkg-config gcc make rpm-build tar git && \
     dnf clean all
