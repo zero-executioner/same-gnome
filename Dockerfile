@@ -10,10 +10,10 @@ WORKDIR /build
 COPY . .
 
 RUN mkdir -p ~/rpmbuild/SOURCES ~/rpmbuild/SPECS && \
+    cp /build/same-gnome.spec ~/rpmbuild/SPECS/ && \
     cd / && \
     mv build same-gnome-1.0.0 && \
-    tar czf ~/rpmbuild/SOURCES/same-gnome-1.0.0.tar.gz --exclude=.git --exclude=builddir --exclude=debian same-gnome-1.0.0/ && \
-    cp /same-gnome-1.0.0/same-gnome.spec ~/rpmbuild/SPECS/ && \
+    tar czf ~/rpmbuild/SOURCES/same-gnome-1.0.0.tar.gz same-gnome-1.0.0/ && \
     rpmbuild -ba ~/rpmbuild/SPECS/same-gnome.spec
 
 CMD ["bash", "-c", "cp ~/rpmbuild/RPMS/x86_64/*.rpm /output/ 2>/dev/null || echo 'Build artifacts not found'"]
