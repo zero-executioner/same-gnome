@@ -25,11 +25,13 @@ mkdir -p %{_builddir}/%{name}-%{version}
 tar xzf %{SOURCE0} -C %{_builddir}/%{name}-%{version} --strip-components=1 2>/dev/null || tar xzf %{SOURCE0} -C %{_builddir}/%{name}-%{version}
 
 %build
-%meson
-%meson_build
+cd %{_builddir}/%{name}-%{version}
+meson setup builddir --prefix=/usr --libdir=/usr/lib64
+meson compile -C builddir
 
 %install
-%meson_install
+cd %{_builddir}/%{name}-%{version}
+meson install -C builddir --destdir=%{buildroot}
 
 %files
 %license LICENSE
