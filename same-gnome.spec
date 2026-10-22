@@ -20,7 +20,7 @@ Click on groups of 2 or more adjacent same-colored balls to remove them.
 The goal is to clear the entire board. Larger groups yield higher scores.
 
 %prep
-%setup -q
+%autosetup -n %{name}-%{version}
 
 %build
 %meson
@@ -36,5 +36,5 @@ The goal is to clear the entire board. Larger groups yield higher scores.
 %{_datadir}/same-gnome/
 
 %changelog
-* Tue Oct 21 2026 djackson <djackson@sonic.danieljackson.systems> - 1.0.0-1
+* Wed Oct 22 2026 djackson <djackson@sonic.danieljackson.systems> - 1.0.0-1
 - Initial package release
