@@ -32,6 +32,10 @@ meson compile -C builddir
 %install
 cd %{_builddir}/%{name}-%{version}
 meson install -C builddir --destdir=%{buildroot}
+mkdir -p %{buildroot}%{_docdir}/%{name}
+mkdir -p %{buildroot}%{_licensedir}/%{name}
+cp README.md %{buildroot}%{_docdir}/%{name}/
+cp LICENSE %{buildroot}%{_licensedir}/%{name}/
 
 %files
 %license LICENSE
