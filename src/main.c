@@ -285,7 +285,7 @@ int main(int argc, char **argv) {
         fprintf(stderr, "Failed to initialize game\n");
         return 1;
     }
-    GtkApplication *gtk_app = gtk_application_new("org.gnome.SameGnome", G_APPLICATION_DEFAULT_FLAGS);
+    GtkApplication *gtk_app = gtk_application_new("org.gnome.SameGnome", G_APPLICATION_FLAGS_NONE);
     g_action_map_add_action_entries(G_ACTION_MAP(gtk_app), app_actions, G_N_ELEMENTS(app_actions), &app);
     g_signal_connect(gtk_app, "activate", G_CALLBACK(activate), &app);
     int status = g_application_run(G_APPLICATION(gtk_app), argc, argv);
