@@ -20,7 +20,9 @@ Click on groups of 2 or more adjacent same-colored balls to remove them.
 The goal is to clear the entire board. Larger groups yield higher scores.
 
 %prep
-%autosetup -n %{name}-%{version}
+rm -rf %{_builddir}/%{name}-%{version}
+mkdir -p %{_builddir}/%{name}-%{version}
+tar xzf %{SOURCE0} -C %{_builddir}/%{name}-%{version} --strip-components=1 2>/dev/null || tar xzf %{SOURCE0} -C %{_builddir}/%{name}-%{version}
 
 %build
 %meson
