@@ -38,8 +38,8 @@ cp README.md %{buildroot}%{_docdir}/%{name}/
 cp LICENSE %{buildroot}%{_licensedir}/%{name}/
 
 %files
-%license LICENSE
-%doc README.md
+%license %{_licensedir}/%{name}/LICENSE
+%doc %{_docdir}/%{name}/README.md
 %{_bindir}/same-gnome
 %{_datadir}/same-gnome/
 
