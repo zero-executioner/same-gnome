@@ -29,7 +29,8 @@ gtk4_dep = dependency('gtk4', version: '>= 4.0')
 # Compile GResource bundle for theme assets
 theme_resources = gnome.compile_resources('themes-resources',
   'data/themes.gresource.xml',
-  c_name: 'themes')
+  c_name: 'themes',
+  source_dir: 'data')
 
 src_files = files(
   'src/main.c',

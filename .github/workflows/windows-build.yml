@@ -1,42 +1,42 @@
 name: Windows Build
 
 on:
- push:
- branches: [main, windows-port]
- pull_request:
- branches: [main]
+  push:
+    branches: [main, windows-port]
+  pull_request:
+    branches: [main]
 
 jobs:
- build-windows:
- runs-on: windows-latest
+  build-windows:
+    runs-on: windows-latest
 
- steps:
- - uses: actions/checkout@v4
+    steps:
+      - uses: actions/checkout@v4
 
- - name: Setup vcpkg
- uses: lukka/run-vcpkg@v11
- with:
- vcpkgDirectory: '${{ github.workspace }}/vcpkg'
- vcpkgGitCommitId: 'latest'
+      - name: Setup vcpkg
+        uses: lukka/run-vcpkg@v11
+        with:
+          vcpkgDirectory: '${{ github.workspace }}/vcpkg'
+          vcpkgGitCommitId: 'latest'
 
- - name: Install dependencies
- run: |
- vcpkg install gtk4:x64-windows cairo:x64-windows glib:x64-windows
+      - name: Install dependencies
+        run: |
+          vcpkg install gtk4:x64-windows cairo:x64-windows glib:x64-windows
 
- - name: Configure Meson
- run: |
- meson setup builddir --buildtype=release
+      - name: Configure Meson
+        run: |
+          meson setup builddir --buildtype=release
 
- - name: Build
- run: |
- ninja -C builddir
+      - name: Build
+        run: |
+          ninja -C builddir
 
- - name: Package distribution
- run: |
- powershell -ExecutionPolicy Bypass -File scripts/package-windows.ps1
+      - name: Package distribution
+        run: |
+          powershell -ExecutionPolicy Bypass -File scripts/package-windows.ps1
 
- - name: Upload artifact
- uses: actions/upload-artifact@v4
- with:
- name: same-gnome-windows
- path: same-gnome-windows.zip
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: same-gnome-windows
+          path: same-gnome-windows.zip
