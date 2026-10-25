@@ -3,7 +3,11 @@
 #include <stdlib.h>
 #include "game.h"
 #include "drawing.h"
+#ifdef _WIN32
+#define DEFAULT_THEME "data\\themes\\planets.png"
+#else
 #define DEFAULT_THEME "data/themes/planets.png"
+#endif
 typedef struct {
     GameState *game;
     Renderer *renderer;

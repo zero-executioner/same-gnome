@@ -16,15 +16,22 @@ Renderer *renderer_new(GtkWidget *canvas, const char *theme_path) {
     r->highlight_cells = NULL;
     r->highlight_count = 0;
     r->rotation_phase = 0.0f;
-    GFile *file = g_file_new_for_path(theme_path);
-    GError *err = NULL;
-    r->theme_texture = gdk_texture_new_from_file(file, &err);
-    if (err) {
-        g_warning("Failed to load theme %s: %s", theme_path, err->message);
-        g_error_free(err);
-        r->theme_texture = NULL;
+
+    // Try loading from GResource first (embedded assets)
+    r->theme_texture = gdk_texture_new_from_resource("/org/gnome/SameGnome/themes/planets.png");
+    if (!r->theme_texture) {
+        // Fallback to file-based loading for development flexibility
+        GError *err = NULL;
+        GFile *file = g_file_new_for_path(theme_path);
+        r->theme_texture = gdk_texture_new_from_file(file, &err);
+        if (err) {
+            g_warning("Failed to load theme %s: %s", theme_path, err->message);
+            g_error_free(err);
+            r->theme_texture = NULL;
+        }
+        g_object_unref(file);
     }
-    g_object_unref(file);
+
     return r;
 }
 void renderer_free(Renderer *r) {

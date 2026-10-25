@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+  <assemblyIdentity
+    type="win32"
+    name="SameGnome"
+    version="1.0.0.0"
+    processorArchitecture="*"
+  />
+  <description>Same GNOME - GTK4 Puzzle Game</description>
+  <trustInfo xmlns="urn:schemas-microsoft-com:asm.v3">
+    <security>
+      <requestedPrivileges>
+        <requestedExecutionLevel level="asInvoker" uiAccess="false"/>
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <application xmlns="urn:schemas-microsoft-com:asm.v3">
+    <windowsSettings xmlns="urn:schemas-microsoft-com:asm.v3">
+      <dpiAware>true/PM</dpiAware>
+    </windowsSettings>
+  </application>
+</assembly>

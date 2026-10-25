@@ -14,12 +14,18 @@ A modern GTK4 port of the classic GNOME "Same" puzzle game, featuring 3D ball ro
 
 ## Building
 
+### Linux
+
 Requires GTK4 development libraries and Meson/Ninja build system:
 
 ```bash
 meson setup builddir
 ninja -C builddir
 ```
+
+### Windows
+
+See [BUILDING-WINDOWS.md](BUILDING-WINDOWS.md) for detailed instructions on building with MSVC and vcpkg.
 
 ## Running
 

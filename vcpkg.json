@@ -1,0 +1,9 @@
+{
+  "name": "same-gnome",
+  "version-string": "1.0.0",
+  "dependencies": [
+    "gtk4",
+    "cairo",
+    "glib"
+  ]
+}
